@@ -91,9 +91,9 @@ public class JDBCPostgreSQLConnection{
 	    c.setAutoCommit(false);
 
 	    stmt = c.createStatement();
-	    ResultSet rs = stmt.executeQuery(String.format("DELETE FROM customer WHERE customer_id=%d;",customer_id));
-	 rs.close();
+	    stmt.executeUpdate(String.format("DELETE FROM customer WHERE customer_id=%d;",customer_id));
 	 stmt.close();
+	 c.commit();
 	 c.close();
       } catch (Exception e) {
          e.printStackTrace();
@@ -111,7 +111,30 @@ public class JDBCPostgreSQLConnection{
 	    c.setAutoCommit(false);
 
 	    stmt = c.createStatement();
-	    ResultSet rs = stmt.executeQuery(String.format("INSERT INTO region (region_id, region) VALUES (%s)", region.insert()));
+	    stmt.executeUpdate(String.format("INSERT INTO region (region_id, region) VALUES (%s);", region.insert()));
+	 stmt.close();
+	 c.commit();
+	 c.close();
+      } catch (Exception e) {
+         e.printStackTrace();
+         System.err.println(e.getClass().getName()+": "+e.getMessage());
+         System.exit(0);
+      }
+    }
+
+    public Region getRegion(int region_id){
+	Connection c = null;
+	Statement stmt = null;
+	Region reg = null;
+	try {
+	    Class.forName("org.postgresql.Driver");
+	    c = DriverManager.getConnection(url, user, password);
+	    c.setAutoCommit(false);
+
+	    stmt = c.createStatement();
+	    ResultSet rs = stmt.executeQuery(String.format("SELECT * FROM region WHERE region_id=%d;", region_id));
+	    if(rs.next())
+		reg = new Region(rs.getInt("region_id"), rs.getString("region"));
 	 rs.close();
 	 stmt.close();
 	 c.close();
@@ -120,6 +143,7 @@ public class JDBCPostgreSQLConnection{
          System.err.println(e.getClass().getName()+": "+e.getMessage());
          System.exit(0);
       }
+      return reg;
     }
 
 }
