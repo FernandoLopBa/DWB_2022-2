@@ -2,9 +2,6 @@ package com.flb.practica01;
 
 import java.sql.*;
 import java.util.Scanner;
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.SQLException;
 
 public class Practica01{
 
@@ -36,7 +33,13 @@ public class Practica01{
 		    String mail = sc.next();
 		    System.out.printf("Inserte region_id:");
 		    int region_id = sc.nextInt();
-		    Region region = getRegion(region_id);
+		    Region region = con.getRegion(region_id);
+		    if(region == null){
+			System.out.println("La región no existe, se va a añadir");
+			System.out.printf("Inserte el nombre de la región:");
+			String region_name = sc.next();
+			region = new Region(region_id, region_name);
+		    }
 		    Customer customer = new Customer(customer_id, name, surname, rfc, mail, region);
 		    con.createCustomer(customer);
 		    break;
@@ -51,39 +54,5 @@ public class Practica01{
 		    System.out.println("Seleccione una opción válida");
 	    }
 	}while(opcion != 0);
-	/*
-      Connection c = null;
-      Statement stmt = null;
-      try {
-         Class.forName("org.postgresql.Driver");
-         c = DriverManager
-            .getConnection("jdbc:postgresql://localhost:5432/customer_region",
-            "cus_reg", "cus_reg");
-         System.out.println("Opened database successfully");
-
-         stmt = c.createStatement();
-         String sql = "CREATE TABLE COMPANY " +
-            "(ID INT PRIMARY KEY     NOT NULL," +
-            " NAME           TEXT    NOT NULL, " +
-            " AGE            INT     NOT NULL, " +
-            " ADDRESS        CHAR(50), " +
-            " SALARY         REAL)";
-         stmt.executeUpdate(sql);
-         stmt.close();
-         c.close();
-      } catch ( Exception e ) {
-         System.err.println( e.getClass().getName()+": "+ e.getMessage() );
-         System.exit(0);
-      }
-      System.out.println("Table created successfully");
-      */
-	/*
-	JDBCPostgreSQLConnection app = new JDBCPostgreSQLConnection();
-	app.connect();
-	*/
-    }
-
-    public static Region getRegion(int region_id){
-	return null;
     }
 }
