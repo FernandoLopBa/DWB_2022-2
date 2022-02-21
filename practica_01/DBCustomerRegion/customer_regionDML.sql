@@ -1,0 +1,31 @@
+INSERT INTO region (region_id, region) VALUES (1, 'Álvaro Obregón');
+INSERT INTO region (region_id, region) VALUES (2, 'Azcapotzalco');
+INSERT INTO region (region_id, region) VALUES (3, 'Benito Juárez');
+INSERT INTO region (region_id, region) VALUES (4, 'Coyoacán');
+INSERT INTO region (region_id, region) VALUES (5, 'Cuajimalpa');
+INSERT INTO region (region_id, region) VALUES (6, 'Cuauhtémoc');
+INSERT INTO region (region_id, region) VALUES (7, 'Gustavo A. Madero');
+INSERT INTO region (region_id, region) VALUES (8, 'Iztacalco');
+INSERT INTO region (region_id, region) VALUES (9, 'Iztapalapa');
+INSERT INTO region (region_id, region) VALUES (10, 'Magdalena Contreras');
+INSERT INTO region (region_id, region) VALUES (11, 'Miguel Hidalgo');
+INSERT INTO region (region_id, region) VALUES (12, 'Milpa Alta');
+INSERT INTO region (region_id, region) VALUES (13, 'Tláhuac');
+INSERT INTO region (region_id, region) VALUES (14, 'Tlalpan');
+INSERT INTO region (region_id, region) VALUES (15, 'Venustiano Carranza');
+INSERT INTO region (region_id, region) VALUES (16, 'Xochimilco');
+
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (1, 'Mel', 'Whale', 'fkrw449981rj1', 'mwhale0@goo.ne.jp', 8);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (2, 'Corey', 'Roft',  'lvlq576387zo4', 'croft1@yandex.ru', 3);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (3, 'Amara', 'Trevance', 'acui765784eh1', 'atrevance2@sphinn.com', 12);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (4, 'Costanza', 'Hamblyn', 'tdzv420949gj1', 'chamblyn3@nifty.com', 8);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (5, 'Tami', 'Aisthorpe', 'etyj993848bn4', 'taisthorpe4@feedburner.com', 2);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (6, 'Torrance', 'Farran', 'hccc280446wf2', 'tfarran5@mlb.com', 14);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (7, 'Brigitte', 'Schutter', 'vhvk493018pi8', 'bschutter6@cyberchimps.com', 7);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (8, 'Pierson', 'Gallaccio', 'jvbm400966no0', 'pgallaccio7@jalbum.net', 9);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (9, 'Alvera', 'Nurse', 'aqfy045353es4', 'anurse8@constantcontact.com', 6);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (10, 'Miguelita', 'Baudin', 'hwqy205775lu6', 'mbaudin9@upenn.edu', 4);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (11, 'Hamid', 'Ladbrook', 'zeqn628687qt5', 'hladbrooka@hostgator.com', 1);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES (12, 'Bordy', 'Healings', 'vzev042608oi4', 'bhealingsb@webeden.co.uk', 6);
+INSERT INTO customer (customer_id, name, surname, rfc, mail, region) VALUES(13, 'Sam', 'Proudman', 'bhtf706081co3', 'sproudmanc@hhs.gov', 9);
+
